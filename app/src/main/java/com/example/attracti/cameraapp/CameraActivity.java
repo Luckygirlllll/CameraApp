@@ -1,8 +1,9 @@
 package com.example.attracti.cameraapp;
 
 /**
- * Created by attracti on 4/25/16.
+ * Created by Iryna on 4/25/16.
  */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -71,6 +72,7 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
         mCameraImage.setVisibility(View.INVISIBLE);
 
         mCameraPreview = (SurfaceView) findViewById(R.id.preview_view);
+
         final SurfaceHolder surfaceHolder = mCameraPreview.getHolder();
         surfaceHolder.addCallback(this);
         surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
@@ -111,6 +113,7 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
             try {
                 mCamera = Camera.open();
                 mCamera.setPreviewDisplay(mCameraPreview.getHolder());
+                mCamera.setDisplayOrientation(90);
                 if (mIsCapturing) {
                     mCamera.startPreview();
                 }
@@ -177,6 +180,7 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
         mCamera.stopPreview();
         mCameraPreview.setVisibility(View.INVISIBLE);
         mCameraImage.setVisibility(View.VISIBLE);
+        mCameraImage.setRotation(90);
         mCaptureImageButton.setText(R.string.recapture_image);
         mCaptureImageButton.setOnClickListener(mRecaptureImageButtonClickListener);
     }

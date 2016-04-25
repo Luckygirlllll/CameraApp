@@ -5,10 +5,10 @@
     android:background="#999999"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/capturing_image" />
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/capturing_image" />-->
 
     <FrameLayout
         android:id="@+id/camera_frame"
