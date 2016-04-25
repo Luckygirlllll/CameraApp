@@ -95,7 +95,7 @@ public class MainActivity extends Activity {
         if (storageState.equals(Environment.MEDIA_MOUNTED)) {
             imageDirectory = new File(
                     Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
-                    "com.oreillyschool.android2.camera");
+                    "CameraApp");
             if (!imageDirectory.exists() && !imageDirectory.mkdirs()) {
                 imageDirectory = null;
             } else {
